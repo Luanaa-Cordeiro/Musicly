@@ -35,9 +35,6 @@
                 <li>
                     <a href="{{route('musicas.index')}}">Músicas</a>
                 </li>
-                <li>
-                    <a href="{{route('populars.index')}}">Populares</a>
-                </li>
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Relatórios</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -53,8 +50,6 @@
                     </ul>
                 </li>
             </ul>
-
-
         </nav>
 
         <!-- Page Content  -->
@@ -65,79 +60,52 @@
         
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                        <img src="{{ asset('assets/imagens/usuario-de-perfil.png')}}" alt="">
-                       <div class="dropdown">
-  <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-  {{ auth()->user()->name }}
-  </a>
-
-  <ul class="dropdown-menu">
-  <form action="{{ route('logout') }}" method="POST" id="logout-form">
-    @csrf
-    <button type="submit" class="btn">Sair</button>
-</form>
-  </ul>
-</div>
+                       <button>sair</button>
                     </div>
                 </div>
             </nav>
 
-            <h2>Bem-Vindo(a) {{ auth()->user()->name }}!</h2>
 
-            <div class="line"></div>
+@if(session()->has('message'))
+    <div class="alerta alert-success alert alert-dismissible">
+        {{ session()->get('message') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+@endif
 
-            <div class="cartoes_titulo">
-            <h3>Artistas</h3>
-            <img src="{{ asset('assets/imagens/microfone-com-fio.png')}}" alt="">
-            </div>
-            <div class="cartoes">
-            <p>Quantidade: {{ $total_artistas }}</p>
-            <a href="{{route('artistas.index')}}"><button>Conferir</button></a>
-            </div>
+<div class='adicionar'>
+    <h2>Populares</h2>
+    <a href="{{route('populars.create')}}"><button>Adicionar</button></a>
+</div>
 
-            <div class="line"></div>
-
-            <div class="cartoes_titulo">
-            <h3>Gêneros</h3>
-            <img src="{{ asset('assets/imagens/cd.png')}}" alt="">
-            </div>
-            <div class="cartoes">
-            <p>Quantidade: {{ $total_generos }}</p>
-            <a href="{{route('generos.index')}}"><button>Conferir</button></a>
-            </div>
-
-            <div class="line"></div>
-
-            <div class="cartoes_titulo">
-            <h3>Álbuns</h3>
-            <img src="{{ asset('assets/imagens/album-de-musica.png')}}" alt="">
-            </div>
-            <div class="cartoes">
-            <p>Quantidade: {{ $total_albuns }}</p>
-            <a href="{{route('albuns.index')}}"><button>Conferir</button></a>
-            </div>
-
-            <div class="line"></div>
-
-            <div class="cartoes_titulo">
-            <h3>Músicas</h3>
-            <img src="{{ asset('assets/imagens/reprodutor-de-musica.png')}}" alt="">
-            </div>
-            <div class="cartoes">
-            <p>Quantidade: {{ $total_musicas }}</p>
-            <a href="{{route('musicas.index')}}"><button>Conferir</button></a>
-            </div>
-
-            <div class="line"></div>
-
-            <div class="cartoes_titulo">
-            <h3>Populares</h3>
-            <img src="{{ asset('assets/imagens/reprodutor-de-musica.png')}}" alt="">
-            </div>
-            <div class="cartoes">
-            <p>Quantidade: {{ $total_popular }}</p>
-            <a href="{{route('populars.index')}}"><button>Conferir</button></a>
-            </div>
-            
+<div class="table-wrapper">
+                <table class="table table-responsive table-striped table-hover">
+                  <thead class="">
+                    <tr>
+                      <th style="background-color:#6d7fcc; color:white;">Id</th>
+                      <th style="background-color:#6d7fcc; color:white;">Música</th>
+                      <th style="background-color:#6d7fcc; color:white;">Álbum</th>
+                      <th style="background-color:#6d7fcc; color:white;">Artista</th>
+                      <th style="background-color:#6d7fcc; color:white;">Gênero</th>
+                      <th style="background-color:#6d7fcc; color:white;" id='ação'>Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+    @foreach($populars as $popular)
+    <tr>
+        <td>{{$popular->id}}</td>
+        <td>{{$popular->musica->nome}}</td>
+        <td>{{$popular->album->nome}}</td>
+        <td>{{$popular->artista->nome}}</td>
+        <td>{{$popular->genero->nome}}</td>
+        <td id='botões'>
+            <button id="editar"><a href="{{ route('populars.edit', ['popular' => $popular->id]) }}">Editar</a></button>
+            <button id="deletar"><a href="{{route('populars.show',['popular' => $popular->id])}}">Mostrar</a></button>
+        </td>
+    </tr>
+    @endforeach
+</tbody>
+        </table>
         </div>
     </div>
 
@@ -145,5 +113,12 @@
     <script src="{{ asset('assets/js/script.js')}}"></script>
 </body>
 </html>
+
+
+
+
+
+
+
 
 

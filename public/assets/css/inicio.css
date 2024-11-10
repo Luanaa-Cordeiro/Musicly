@@ -1,5 +1,9 @@
+.carousel .carousel-indicators button{
+    background-color: #20368d;
+}
+
 .botao_entrar{
-    background-color: #6d7fcc;
+    background-color:  #20368d;
     color: white;
     border: none;
     border-radius: 10px;
@@ -19,3 +23,14 @@
 .carousel-inner{
     height: 20em;
 }
+
+.navbar{
+    background-color: #6d7fcc;
+    color: aliceblue;
+}
+
+.navbar a{
+    color: aliceblue;
+}
+
+

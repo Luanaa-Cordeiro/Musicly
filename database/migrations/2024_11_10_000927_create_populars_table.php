@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('populars', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('id_musica')->constrained('musicas')->onDelete('cascade')->onUpdate('no action'); 
+            $table->foreignId('id_artista')->constrained('artistas')->onDelete('cascade')->onUpdate('no action'); 
+            $table->foreignId('id_album')->constrained('albums')->onDelete('cascade')->onUpdate('no action'); 
+            $table->foreignId('id_genero')->constrained('generos')->onDelete('cascade')->onUpdate('no action'); 
+            $table->timestamps(); 
         });
     }
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\ArtistaController;
 use App\Http\Controllers\GeneroController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\MusicaController;
+use App\Http\Controllers\PopularController;
 use App\Http\Controllers\LoginController;
 
 
@@ -52,6 +53,15 @@ Route::get('/musicas{musica}', [MusicaController::class,'show'])->name('musicas.
 Route::get('/musicas/{musica}/edit', [MusicaController::class,'edit'])->name('musicas.edit')->middleware(['auth', 'verified']);
 Route::put('/musicas/{musica}', [MusicaController::class,'update'])->name('musicas.update')->middleware(['auth', 'verified']);
 Route::delete('/musicas/{musica}', [MusicaController::class,'destroy'])->name('musicas.destroy')->middleware(['auth', 'verified']);
+
+/*Populares*/
+Route::get('/populars', [PopularController::class,'index'])->name('populars.index')->middleware(['auth', 'verified']);
+Route::get('/populars/create', [PopularController::class,'create'])->name('populars.create')->middleware(['auth', 'verified']);
+Route::post('/populars', [PopularController::class,'store'])->name('populars.store')->middleware(['auth', 'verified']);
+Route::get('/populars{popular}', [PopularController::class,'show'])->name('populars.show')->middleware(['auth', 'verified']);
+Route::get('/populars/{popular}/edit', [PopularController::class,'edit'])->name('populars.edit')->middleware(['auth', 'verified']);
+Route::put('/populars/{popular}', [PopularController::class,'update'])->name('populars.update')->middleware(['auth', 'verified']);
+Route::delete('/populars/{popular}', [PopularController::class,'destroy'])->name('populars.destroy')->middleware(['auth', 'verified']);
 
 Route::get('/', function () {
     return view('welcome');

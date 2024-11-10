@@ -35,9 +35,6 @@
                 <li>
                     <a href="{{route('musicas.index')}}">Músicas</a>
                 </li>
-                <li>
-                    <a href="{{route('populars.index')}}">Populares</a>
-                </li>
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Relatórios</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -65,85 +62,37 @@
         
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                        <img src="{{ asset('assets/imagens/usuario-de-perfil.png')}}" alt="">
-                       <div class="dropdown">
-  <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-  {{ auth()->user()->name }}
-  </a>
-
-  <ul class="dropdown-menu">
-  <form action="{{ route('logout') }}" method="POST" id="logout-form">
-    @csrf
-    <button type="submit" class="btn">Sair</button>
-</form>
-  </ul>
-</div>
+                       <button>sair</button>
                     </div>
                 </div>
             </nav>
 
-            <h2>Bem-Vindo(a) {{ auth()->user()->name }}!</h2>
+<div class="deletar_main">
+   <h1>Música popular selecionada - {{$populars->musica->nome}}</h1>
+<form action="{{ route('populars.destroy', ['popular' => $populars->id]) }}" method="post">
+@csrf
 
-            <div class="line"></div>
+    <input type="hidden" name="_method" value="delete">
+    <div class="botoes_deletar">
+    <button type='submit'>Deletar</button><br>
+    <a href="{{ route('populars.index')}}">Voltar</a>
+    </div>
+</form>
+</div>    
 
-            <div class="cartoes_titulo">
-            <h3>Artistas</h3>
-            <img src="{{ asset('assets/imagens/microfone-com-fio.png')}}" alt="">
-            </div>
-            <div class="cartoes">
-            <p>Quantidade: {{ $total_artistas }}</p>
-            <a href="{{route('artistas.index')}}"><button>Conferir</button></a>
-            </div>
 
-            <div class="line"></div>
-
-            <div class="cartoes_titulo">
-            <h3>Gêneros</h3>
-            <img src="{{ asset('assets/imagens/cd.png')}}" alt="">
-            </div>
-            <div class="cartoes">
-            <p>Quantidade: {{ $total_generos }}</p>
-            <a href="{{route('generos.index')}}"><button>Conferir</button></a>
-            </div>
-
-            <div class="line"></div>
-
-            <div class="cartoes_titulo">
-            <h3>Álbuns</h3>
-            <img src="{{ asset('assets/imagens/album-de-musica.png')}}" alt="">
-            </div>
-            <div class="cartoes">
-            <p>Quantidade: {{ $total_albuns }}</p>
-            <a href="{{route('albuns.index')}}"><button>Conferir</button></a>
-            </div>
-
-            <div class="line"></div>
-
-            <div class="cartoes_titulo">
-            <h3>Músicas</h3>
-            <img src="{{ asset('assets/imagens/reprodutor-de-musica.png')}}" alt="">
-            </div>
-            <div class="cartoes">
-            <p>Quantidade: {{ $total_musicas }}</p>
-            <a href="{{route('musicas.index')}}"><button>Conferir</button></a>
-            </div>
-
-            <div class="line"></div>
-
-            <div class="cartoes_titulo">
-            <h3>Populares</h3>
-            <img src="{{ asset('assets/imagens/reprodutor-de-musica.png')}}" alt="">
-            </div>
-            <div class="cartoes">
-            <p>Quantidade: {{ $total_popular }}</p>
-            <a href="{{route('populars.index')}}"><button>Conferir</button></a>
-            </div>
-            
-        </div>
+</div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/js/script.js')}}"></script>
 </body>
 </html>
+
+
+
+
+
+
 
 

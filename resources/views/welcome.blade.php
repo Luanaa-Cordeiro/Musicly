@@ -9,12 +9,12 @@
     <title>Document</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+<nav class="navbar navbar-expand-lg ">
   <div class="container">
     <a class="navbar-brand me-2" href="https://mdbgo.com/">
       <img
-        src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-        height="16"
+        src="{{asset('assets/imagens/MusicLy.png')}}"
+        height="35"
         alt="MDB Logo"
         loading="lazy"
         style="margin-top: -1px;"
@@ -36,7 +36,7 @@
     <div class="collapse navbar-collapse" id="navbarButtonsExample">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">Dashboard</a>
+          <a class="nav-link"href="#">MusicLy</a>
         </li>
       </ul>
 
@@ -54,7 +54,7 @@
                                 @else
                                     <a
                                         href="{{ route('login') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                         class="rounded-md px-3 py-2 text-white ring-1 ring-transparent transition hover:text-white/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                                     >
                                         Log in
                                     </a>
@@ -63,7 +63,7 @@
                                     @if (Route::has('register'))
                                         <a
                                             href="{{ route('register') }}"
-                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                             class="rounded-md px-3 py-2 text-white ring-1 ring-transparent transition hover:text-white/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                                         >
                                             Cadastrar-se
                                         </a>
@@ -87,37 +87,34 @@
 
 <div id="carouselExampleCaptions" class="carousel slide">
   <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active " aria-current="true" aria-label="Slide 1"></button>
     <button style=""type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"aria-current="true" aria-label="Slide 4"></button>
   </div>
   <div class="carousel-inner">
     <div class="carousel-item h-100 active" style="background-image: url('{{ asset('assets/imagens/artistas1.avif') }}'); background-size:contain; background-repeat: no-repeat; background-position: center;">
-      
+  
       <div class="carousel-caption d-none d-md-block">
-        <h5 style='color:black;'>Veja seus artistas!</h5>
         <button class="botao_entrar">Artistas</button>
       </div>
     </div>
-    <div class="carousel-item h-100" style="background-image: url('{{ asset('assets/imagens/generos_musicais.avif') }}'); ">
+    <div class="carousel-item h-100" style="background-image: url('{{ asset('assets/imagens/generos_musicais.jpg') }}'); background-size:contain; background-repeat: no-repeat; background-position: center; ">
       
       <div class="carousel-caption d-none d-md-block">
-        <h5 style='color:black;'>Escolha seus gêneros!</h5>
+   
         <button class="botao_entrar">Gêneros</button>
       </div>
     </div>
-    <div class="carousel-item h-100" style="background-image: url('{{ asset('assets/imagens/albuns.jpg') }}');">
+    <div class="carousel-item h-100" style="background-image: url('{{ asset('assets/imagens/albuns.png') }}'); background-size:contain; background-repeat: no-repeat; background-position: center;">
      
       <div class="carousel-caption d-none d-md-block">
-        <h5>Os melhores conjuntos!</h5>
         <button class="botao_entrar">Albuns</button>
       </div>
     </div>
-    <div class="carousel-item h-100" style="background-image: url('{{ asset('assets/imagens/musicas.jpg') }}');">
+    <div class="carousel-item h-100" style="background-image: url('{{ asset('assets/imagens/musicas.jpg') }}'); background-size:contain; background-repeat: no-repeat; background-position: center;">
     
       <div class="carousel-caption d-none d-md-block">
-        <h5 style='color:black;'>Ouça as melhores!</h5>
         <button class="botao_entrar">Musicas</button>
       </div>
     </div>

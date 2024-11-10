@@ -8,6 +8,7 @@ use App\Models\Artista;
 use App\Models\Genero;
 use App\Models\Album;
 use App\Models\Musica;
+use App\Models\Popular;
 
 class HomeController extends Controller
 {
@@ -20,12 +21,14 @@ class HomeController extends Controller
         $totalGeneros = Genero::count();
         $totalAlbuns = Album::count();
         $totalMusicas = Musica::count();
+        $totalPopulars = Popular::count();
 
         return view('home', [
             'total_artistas' => $totalArtistas,
             'total_generos' => $totalGeneros,
             'total_albuns' => $totalAlbuns,
             'total_musicas' => $totalMusicas,
+            'total_popular' => $totalPopulars,
         ]);
 
         return view('home');
