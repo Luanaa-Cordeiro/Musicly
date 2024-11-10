@@ -67,42 +67,32 @@
                 </div>
             </nav>
 
-@if(session()->has('message'))
-    <div class="alerta alert-success alert alert-dismissible">
-        {{ session()->get('message') }}
-    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    </div>
-@endif
-
-
-
-<div class="main_editar">
-<div class="formulario_editar">
-<form action="{{ route('artistas.update', ['artista' => $artistas->id])}}" method='post'>
+<div class="deletar_main">
+   <h1>Música selecionada - {{$musicas->nome}}</h1>
+<form action="{{ route('musicas.destroy', ['musica' => $musicas->id]) }}" method="post">
 @csrf
-  <div data-mdb-input-init class="form-outline mb-4">
-    <label class="form-label" for="nome_artista" style="color:white;">Nome do Artista<span class="asterisco">*</span></label><br>
-    <input class="form-control" type="text" name="nome" value="{{$artistas->nome}}">
-    <input type="hidden" name="_method" value="PUT">
-  </div>
 
-  <div id="botao_editar">
-  <button data-mdb-ripple-init type="submit" id="editar" class="btn btn-block">Editar</button>
-  <a href="{{ route('artistas.index')}}">Voltar</a>
-</div>
+    <input type="hidden" name="_method" value="delete">
+    <div class="botoes_deletar">
+    <button type='submit'>Deletar</button><br>
+    <a href="{{ route('musicas.index')}}">Voltar</a>
+    </div>
 </form>
-</div>
-</div>
+</div>    
 
 
-            
-        </div>
+</div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/js/script.js')}}"></script>
 </body>
 </html>
+
+
+
+
+
 
 
 

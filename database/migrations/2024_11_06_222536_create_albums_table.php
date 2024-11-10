@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('albums', function (Blueprint $table) {
             $table->id(); 
             $table->string('nome')->unique(); 
-            $table->date('data_lanc');
             $table->foreignId('id_artista')->constrained('artistas')->onDelete('cascade')->onUpdate('no action'); 
 
             $table->timestamps(); // Cria as colunas created_at e updated_at

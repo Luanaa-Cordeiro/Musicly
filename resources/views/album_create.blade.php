@@ -33,7 +33,7 @@
                     <a href="{{route('albuns.index')}}">Álbuns</a>
                 </li>
                 <li>
-                    <a href="">Músicas</a>
+                    <a href="{{route('musicas.index')}}">Músicas</a>
                 </li>
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Relatórios</a>

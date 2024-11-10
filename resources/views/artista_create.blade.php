@@ -27,13 +27,13 @@
                     <a href="{{route('artistas.index')}}">Artistas</a>
                 </li>
                 <li>
-                    <a href="">Géneros</a>
+                    <a href="{{route('generos.index')}}">Géneros</a>
                 </li>
                 <li>
-                    <a href="">Álbuns</a>
+                    <a href="{{route('albuns.index')}}">Álbuns</a>
                 </li>
                 <li>
-                    <a href="">Músicas</a>
+                    <a href="{{route('musicas.index')}}">Músicas</a>
                 </li>
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Relatórios</a>

@@ -46,7 +46,7 @@
                             <nav class="-mx-3 flex flex-1 justify-end">
                                 @auth
                                     <a
-                                        href="{{ url('/dashboard') }}"
+                                        href="{{ url('/home') }}"
                                         class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                                     >
                                         Dashboard
@@ -84,52 +84,55 @@
   </div>
 </nav>
 
+
 <div id="carouselExampleCaptions" class="carousel slide">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button style=""type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"aria-current="true" aria-label="Slide 4"></button>
   </div>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="{{asset('assets/imagens/artistas.jpg')}}" class="d-block w-100" alt="...">
+    <div class="carousel-item h-100 active" style="background-image: url('{{ asset('assets/imagens/artistas1.avif') }}'); background-size:contain; background-repeat: no-repeat; background-position: center;">
+      
       <div class="carousel-caption d-none d-md-block">
-        <h5>Veja seus artistas!</h5>
+        <h5 style='color:black;'>Veja seus artistas!</h5>
         <button class="botao_entrar">Artistas</button>
       </div>
     </div>
-    <div class="carousel-item">
-      <img src="{{asset('assets/imagens/albuns2.jpg')}}" class="d-block w-100" alt="...">
+    <div class="carousel-item h-100" style="background-image: url('{{ asset('assets/imagens/generos_musicais.avif') }}'); ">
+      
       <div class="carousel-caption d-none d-md-block">
         <h5 style='color:black;'>Escolha seus gêneros!</h5>
         <button class="botao_entrar">Gêneros</button>
       </div>
     </div>
-    <div class="carousel-item">
-      <img src="{{asset('assets/imagens/albuns.jpg')}}" class="d-block w-100" alt="...">
+    <div class="carousel-item h-100" style="background-image: url('{{ asset('assets/imagens/albuns.jpg') }}');">
+     
       <div class="carousel-caption d-none d-md-block">
         <h5>Os melhores conjuntos!</h5>
         <button class="botao_entrar">Albuns</button>
       </div>
     </div>
-    <div class="carousel-item">
-      <img src="{{asset('assets/imagens/musicas.jpg')}}" class="d-block w-100" alt="...">
+    <div class="carousel-item h-100" style="background-image: url('{{ asset('assets/imagens/musicas.jpg') }}');">
+    
       <div class="carousel-caption d-none d-md-block">
         <h5 style='color:black;'>Ouça as melhores!</h5>
         <button class="botao_entrar">Musicas</button>
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+  <button  style="background-color: #6d7fcc; color: white;" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" style="background-color: #6d7fcc; color: white;">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

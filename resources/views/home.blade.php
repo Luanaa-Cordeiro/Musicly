@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,7 +33,7 @@
                     <a href="{{route('albuns.index')}}">Álbuns</a>
                 </li>
                 <li>
-                    <a href="">Músicas</a>
+                    <a href="{{route('musicas.index')}}">Músicas</a>
                 </li>
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Relatórios</a>
@@ -62,10 +62,18 @@
         
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                        <img src="{{ asset('assets/imagens/usuario-de-perfil.png')}}" alt="">
-                       <form action="{{ route('logout') }}" method="POST" id="logout-form">
+                       <div class="dropdown">
+  <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Perfil
+  </a>
+
+  <ul class="dropdown-menu">
+  <form action="{{ route('logout') }}" method="POST" id="logout-form">
     @csrf
     <button type="submit" class="btn">Sair</button>
 </form>
+  </ul>
+</div>
                     </div>
                 </div>
             </nav>
@@ -79,7 +87,8 @@
             <img src="{{ asset('assets/imagens/microfone-com-fio.png')}}" alt="">
             </div>
             <div class="cartoes">
-           
+            <p>Quantidade: {{ $total_artistas }}</p>
+            <a href="{{route('artistas.index')}}"><button>Conferir</button></a>
             </div>
 
             <div class="line"></div>
@@ -89,7 +98,8 @@
             <img src="{{ asset('assets/imagens/cd.png')}}" alt="">
             </div>
             <div class="cartoes">
-           
+            <p>Quantidade: {{ $total_generos }}</p>
+            <a href="{{route('generos.index')}}"><button>Conferir</button></a>
             </div>
 
             <div class="line"></div>
@@ -99,8 +109,8 @@
             <img src="{{ asset('assets/imagens/album-de-musica.png')}}" alt="">
             </div>
             <div class="cartoes">
-            
-    
+            <p>Quantidade: {{ $total_albuns }}</p>
+            <a href="{{route('albuns.index')}}"><button>Conferir</button></a>
             </div>
 
             <div class="line"></div>
@@ -110,7 +120,8 @@
             <img src="{{ asset('assets/imagens/reprodutor-de-musica.png')}}" alt="">
             </div>
             <div class="cartoes">
-            
+            <p>Quantidade: {{ $total_musicas }}</p>
+            <a href="{{route('musicas.index')}}"><button>Conferir</button></a>
             </div>
             
         </div>

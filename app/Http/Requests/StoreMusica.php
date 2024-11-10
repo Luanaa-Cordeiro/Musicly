@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreAlbum extends FormRequest
+class StoreMusica extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,6 +24,8 @@ class StoreAlbum extends FormRequest
         return [
             'nome' => 'required|min:3|max:50|unique:artistas',
             'id_artista' => 'required',
+            'id_genero' => 'required',
+            'id_album' => 'required' 
         ];
     }
 }

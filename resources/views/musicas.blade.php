@@ -50,8 +50,6 @@
                     </ul>
                 </li>
             </ul>
-
-
         </nav>
 
         <!-- Page Content  -->
@@ -67,6 +65,7 @@
                 </div>
             </nav>
 
+
 @if(session()->has('message'))
     <div class="alerta alert-success alert alert-dismissible">
         {{ session()->get('message') }}
@@ -74,28 +73,39 @@
     </div>
 @endif
 
-
-
-<div class="main_editar">
-<div class="formulario_editar">
-<form action="{{ route('artistas.update', ['artista' => $artistas->id])}}" method='post'>
-@csrf
-  <div data-mdb-input-init class="form-outline mb-4">
-    <label class="form-label" for="nome_artista" style="color:white;">Nome do Artista<span class="asterisco">*</span></label><br>
-    <input class="form-control" type="text" name="nome" value="{{$artistas->nome}}">
-    <input type="hidden" name="_method" value="PUT">
-  </div>
-
-  <div id="botao_editar">
-  <button data-mdb-ripple-init type="submit" id="editar" class="btn btn-block">Editar</button>
-  <a href="{{ route('artistas.index')}}">Voltar</a>
-</div>
-</form>
-</div>
+<div class='adicionar'>
+    <h2>Músicas</h2>
+    <a href="{{route('musicas.create')}}"><button>Adicionar</button></a>
 </div>
 
-
-            
+<div class="table-wrapper">
+                <table class="table table-responsive table-striped table-hover">
+                  <thead class="">
+                    <tr>
+                      <th style="background-color:#6d7fcc; color:white;">Id</th>
+                      <th style="background-color:#6d7fcc; color:white;">Nome</th>
+                      <th style="background-color:#6d7fcc; color:white;">Artista</th>
+                      <th style="background-color:#6d7fcc; color:white;">Álbum</th>
+                      <th style="background-color:#6d7fcc; color:white;">Gênero</th>
+                      <th style="background-color:#6d7fcc; color:white;" id='ação'>Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+    @foreach($musicas as $musica)
+    <tr>
+        <td>{{$musica->id}}</td>
+        <td>{{$musica->nome}}</td>
+        <td>{{$musica->artista->nome}}</td>
+        <td>{{$musica->album->nome}}</td>
+        <td>{{$musica->genero->nome}}</td>
+        <td id='botões'>
+            <button id="editar"><a href="{{ route('musicas.edit', ['musica' => $musica->id]) }}">Editar</a></button>
+            <button id="deletar"><a href="{{route('musicas.show',['musica' => $musica->id])}}">Mostrar</a></button>
+        </td>
+    </tr>
+    @endforeach
+</tbody>
+        </table>
         </div>
     </div>
 
@@ -103,6 +113,12 @@
     <script src="{{ asset('assets/js/script.js')}}"></script>
 </body>
 </html>
+
+
+
+
+
+
 
 
 

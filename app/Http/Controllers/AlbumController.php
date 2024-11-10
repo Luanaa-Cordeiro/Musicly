@@ -62,17 +62,18 @@ class AlbumController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Album $album)
     {
-        //
+        return view('album_show',['albuns' => $album]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Album $album)
     {
-        //
+        $artistas = Artista::all();
+        return view('album_edit', ['albuns' => $album], ['artistas' => $artistas]);
     }
 
     /**
@@ -80,7 +81,13 @@ class AlbumController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $updated = $this->album->where('id', $id)->update($request->except(['_token','_method']));
+
+        if($updated){
+            return redirect()->route('albuns.index')->with('message','Atualizado com sucesso');
+        }
+
+        return redirect()->route('albuns.index')->with('message','Erro ao atualizar');
     }
 
     /**
@@ -88,6 +95,8 @@ class AlbumController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->album->where('id',$id)->delete();
+
+       return redirect()->route('albuns.index')->with('message','Deletado com sucesso');
     }
 }

@@ -78,17 +78,35 @@
 
 <div class="main_editar">
 <div class="formulario_editar">
-<form action="{{ route('artistas.update', ['artista' => $artistas->id])}}" method='post'>
+<form action="{{ route('musicas.update', ['musica' => $musicas->id])}}" method='post'>
 @csrf
   <div data-mdb-input-init class="form-outline mb-4">
     <label class="form-label" for="nome_artista" style="color:white;">Nome do Artista<span class="asterisco">*</span></label><br>
-    <input class="form-control" type="text" name="nome" value="{{$artistas->nome}}">
+    <input class="form-control" type="text" name="nome" value="{{$musicas->nome}}"><br>
+    <select name="id_artista" id="artista" required>
+    <option disabled selected hidden>Selecione um Artista</option>
+    @foreach($artistas as $artista)
+        <option value="{{ $artista->id}}">{{ $artista->nome }}</option>
+    @endforeach
+</select>
+<select name="id_genero" id="generos" required>
+    <option disabled selected hidden>Selecione um Genero</option>
+    @foreach($generos as $genero)
+        <option value="{{ $genero->id}}">{{ $genero->nome }}</option>
+    @endforeach
+</select>
+<select name="id_album" id="album" required>
+    <option disabled selected hidden>Selecione um Álbum</option>
+    @foreach($albuns as $album)
+        <option value="{{ $album->id}}">{{ $album->nome }}</option>
+    @endforeach
+</select>
     <input type="hidden" name="_method" value="PUT">
   </div>
 
   <div id="botao_editar">
   <button data-mdb-ripple-init type="submit" id="editar" class="btn btn-block">Editar</button>
-  <a href="{{ route('artistas.index')}}">Voltar</a>
+  <a href="{{ route('musicas.index')}}">Voltar</a>
 </div>
 </form>
 </div>

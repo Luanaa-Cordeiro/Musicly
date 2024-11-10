@@ -6,7 +6,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArtistaController;
 use App\Http\Controllers\GeneroController;
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\MusicaController;
 use App\Http\Controllers\LoginController;
+
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
@@ -41,6 +43,15 @@ Route::get('/albuns{album}', [AlbumController::class,'show'])->name('albuns.show
 Route::get('/albuns/{album}/edit', [AlbumController::class,'edit'])->name('albuns.edit')->middleware(['auth', 'verified']);
 Route::put('/albuns/{album}', [AlbumController::class,'update'])->name('albuns.update')->middleware(['auth', 'verified']);
 Route::delete('/albuns/{album}', [AlbumController::class,'destroy'])->name('albuns.destroy')->middleware(['auth', 'verified']);
+
+//Músicas
+Route::get('/musicas', [MusicaController::class,'index'])->name('musicas.index')->middleware(['auth', 'verified']);
+Route::get('/musicas/create', [MusicaController::class,'create'])->name('musicas.create')->middleware(['auth', 'verified']);
+Route::post('/musicas', [MusicaController::class,'store'])->name('musicas.store')->middleware(['auth', 'verified']);
+Route::get('/musicas{musica}', [MusicaController::class,'show'])->name('musicas.show')->middleware(['auth', 'verified']);
+Route::get('/musicas/{musica}/edit', [MusicaController::class,'edit'])->name('musicas.edit')->middleware(['auth', 'verified']);
+Route::put('/musicas/{musica}', [MusicaController::class,'update'])->name('musicas.update')->middleware(['auth', 'verified']);
+Route::delete('/musicas/{musica}', [MusicaController::class,'destroy'])->name('musicas.destroy')->middleware(['auth', 'verified']);
 
 Route::get('/', function () {
     return view('welcome');

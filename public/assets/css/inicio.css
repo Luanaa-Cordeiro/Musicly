@@ -12,6 +12,10 @@
     background-color: #20368d
 }
 
-.carousel img{
+/*.carousel img{
     height: 350px;
+}*/
+
+.carousel-inner{
+    height: 20em;
 }

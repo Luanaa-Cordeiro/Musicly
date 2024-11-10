@@ -113,6 +113,14 @@ select{
     margin-top: 10px;
 }
 
+.dropdown-toggle{
+margin-right: 25px;
+}
+
+.btn.dropdown-toggle {
+    color: black; 
+}
+
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
