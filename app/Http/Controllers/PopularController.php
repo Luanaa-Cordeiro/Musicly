@@ -78,7 +78,7 @@ class PopularController extends Controller
         ]);
 
         if($created){
-           return redirect()->route('populars.index')->with('message',  $created->musica->nome  . 'adicionado ao popular');
+           return redirect()->route('populars.index')->with('message',  $created->musica->nome  . ' adicionado ao popular');
         }
 
         return redirect()->route('populars.index')->with('message','Erro ao criar');

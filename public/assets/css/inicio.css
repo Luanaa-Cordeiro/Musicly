@@ -34,3 +34,46 @@
 }
 
 
+.catoes{
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+.card{
+    margin: 0 40px 40px 40px;
+}
+
+.main_card{
+    margin-top: 30px;
+}
+
+.main_card h1{
+    margin-left: 60px;
+}
+
+.btn{
+    background-color: #6d7fcc;
+    color: aliceblue;
+}
+
+.about{
+    background-color: #6d7fcc;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: aliceblue;
+}
+
+.itens_about{
+    margin-left: 60px;
+    margin-top: 20px;
+    width: 600px;
+}
+
+.about img{
+    height: 300px;
+    width: 550px;
+    align-items: end;
+}

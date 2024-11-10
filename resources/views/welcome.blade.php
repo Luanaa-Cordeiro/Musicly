@@ -85,7 +85,7 @@
 </nav>
 
 
-<div id="carouselExampleCaptions" class="carousel slide">
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-interval="3000">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active " aria-current="true" aria-label="Slide 1"></button>
     <button style=""type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -129,6 +129,54 @@
   </button>
 </div>
 
+<div class=" main_card">
+<h1>Serviços</h1>
+
+<div class="catoes">
+<div class="card" style="width: 18rem;">
+  <img src="{{ asset('assets/imagens/artistas1.jpg') }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Artistas</h5>
+    <p class="card-text">Os melhores cantores da indústria musical!</p>
+
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="{{ asset('assets/imagens/albuns2.jpg') }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Gêneros</h5>
+    <p class="card-text">Os melhores estilos musicais!</p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="{{ asset('assets/imagens/albuns.jpg') }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Álbuns</h5>
+    <p class="card-text">Melhores álbuns de seus artistas preferidos!</p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="{{ asset('assets/imagens/musica.avif') }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Músicas</h5>
+    <p class="card-text">As melhores disponíveis!</p>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="about">
+<div class="itens_about">
+  <h1>Sobre Nós</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe repudiandae voluptatem nisi repellat! Veritatis autem eligendi porro atque nulla, laboriosam eos ducimus facere magnam delectus qui repellat quasi nesciunt. Labore.</p>
+  </div>
+
+  <img src="{{ asset('assets/imagens/albuns.jpg') }}" alt="">
+</div>
+
+<div class="populares">
+  <h1>Populares</h1>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

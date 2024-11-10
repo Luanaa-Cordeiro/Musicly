@@ -35,6 +35,9 @@
                 <li>
                     <a href="{{route('musicas.index')}}">Músicas</a>
                 </li>
+                <li>
+                    <a href="{{route('populars.index')}}">Populares</a>
+                </li>
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Relatórios</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -54,15 +57,27 @@
 
         </nav>
 
+
         <!-- Page Content  -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg ">
+        <nav class="navbar navbar-expand-lg ">
                 <div class="container-fluid">
         
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                        <img src="{{ asset('assets/imagens/usuario-de-perfil.png')}}" alt="">
-                       <button>sair</button>
+                       <div class="dropdown">
+  <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  {{ auth()->user()->name }}
+  </a>
+
+  <ul class="dropdown-menu">
+  <form action="{{ route('logout') }}" method="POST" id="logout-form">
+    @csrf
+    <button type="submit" class="btn">Sair</button>
+</form>
+  </ul>
+</div>
                     </div>
                 </div>
             </nav>

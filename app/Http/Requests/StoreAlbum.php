@@ -22,7 +22,7 @@ class StoreAlbum extends FormRequest
     public function rules(): array
     {
         return [
-            'nome' => 'required|min:3|max:50|unique:artistas',
+            'nome' => 'required|min:1|max:50|unique:artistas',
             'id_artista' => 'required',
         ];
     }
