@@ -8,6 +8,7 @@ use App\Http\Controllers\GeneroController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\MusicaController;
 use App\Http\Controllers\PopularController;
+use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\LoginController;
 
 
@@ -63,9 +64,17 @@ Route::get('/populars/{popular}/edit', [PopularController::class,'edit'])->name(
 Route::put('/populars/{popular}', [PopularController::class,'update'])->name('populars.update')->middleware(['auth', 'verified']);
 Route::delete('/populars/{popular}', [PopularController::class,'destroy'])->name('populars.destroy')->middleware(['auth', 'verified']);
 
-Route::get('/', function () {
+Route::get('/', [WelcomeController::class,'index'])->name('welcomes.index');
+/*Route::get('/welcomes/create', [PopularController::class,'create'])->name('populars.create');
+Route::post('/welcomes', [PopularController::class,'store'])->name('populars.store');
+Route::get('/welcomes{welcome}', [PopularController::class,'show'])->name('populars.show');
+Route::get('/welcomes/{welcome}/edit', [PopularController::class,'edit'])->name('populars.edit');
+Route::put('/welcomes/{welcome}', [PopularController::class,'update'])->name('populars.update');
+Route::delete('/welcomes/{welcome}', [PopularController::class,'destroy'])->name('populars.destroy');*/
+
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 /*Route::get('/dashboard', function () {
     return view('dashboard');

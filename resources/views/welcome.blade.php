@@ -132,7 +132,7 @@
 <div class=" main_card">
 <h1>Serviços</h1>
 
-<div class="catoes">
+<div class="cartoes">
 <div class="card" style="width: 18rem;">
   <img src="{{ asset('assets/imagens/artistas1.jpg') }}" class="card-img-top" alt="...">
   <div class="card-body">
@@ -176,6 +176,56 @@
 
 <div class="populares">
   <h1>Populares</h1>
+  <div class="table-wrapper">
+                <table class="table table-responsive table-striped table-hover">
+                  <thead class="">
+                    <tr>
+                      <th style="background-color:#6d7fcc; color:white;">Id</th>
+                      <th style="background-color:#6d7fcc; color:white;">Música</th>
+                      <th style="background-color:#6d7fcc; color:white;">Álbum</th>
+                      <th style="background-color:#6d7fcc; color:white;">Artista</th>
+                      <th style="background-color:#6d7fcc; color:white;">Gênero</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+    @foreach($populars as $popular)
+    <tr>
+        <td>{{$popular->id}}</td>
+        <td>{{$popular->musica->nome}}</td>
+        <td>{{$popular->album->nome}}</td>
+        <td>{{$popular->artista->nome}}</td>
+        <td>{{$popular->genero->nome}}</td>
+    </tr>
+    @endforeach
+</tbody>
+        </table>
+        </div>
+    </div>
+</div>
+
+<div class="biografia">
+  <h1>Biografias</h1>
+
+  <div class="cartoes_bio">
+  <div class="card" style="width: 18rem;">
+  <img src="{{ asset('assets/imagens/theweekend.png') }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Abel Makkonen Tesfaye, mais conhecido por seu nome artístico The Weeknd, é um cantor, compositor, ator e produtor musical canadense.</p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="{{ asset('assets/imagens/arianna.jpeg') }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Ariana Grande-Butera é uma cantora, compositora, produtora musical, atriz e empresária norte-americana.<p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="{{ asset('assets/imagens/djavan.jpg') }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Djavan Caetano Viana é um cantor, compositor, arranjador, produtor musical, empresário, violonista e ex-futebolista brasileiro. </p>
+  </div>
+</div>
+</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

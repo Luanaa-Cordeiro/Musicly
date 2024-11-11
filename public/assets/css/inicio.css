@@ -34,10 +34,29 @@
 }
 
 
-.catoes{
+.cartoes{
     display: flex;
     flex-direction: row;
     margin: 20px;
+}
+
+.biografia{
+    background: linear-gradient(to right, #6d7ecc, #4c5fb4, #20368d);
+    height: 450px;
+}
+
+.biografia h1{
+    margin-left: 60px;
+    color: aliceblue;
+    margin-bottom: 20px;
+    padding-top: 15px;
+}
+
+.cartoes_bio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 20px 0 20px;
 }
 
 .card{
@@ -58,7 +77,7 @@
 }
 
 .about{
-    background-color: #6d7fcc;
+    background: linear-gradient(to right, #6d7ecc, #4c5fb4, #20368d);
     height: 300px;
     display: flex;
     flex-direction: row;
@@ -76,4 +95,12 @@
     height: 300px;
     width: 550px;
     align-items: end;
+}
+
+.populares{
+    margin: 40px 60px 60px 60px;
+}
+
+.populares h1{
+    margin-bottom: 25px;
 }
