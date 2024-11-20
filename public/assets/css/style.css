@@ -241,6 +241,7 @@ a.article:hover {
     font-size: 15px;
     padding: 8px 16px;
     margin: 0px 2px;
+    padding: 12px 20px;
 }
 
 .adicionar button:hover{
@@ -291,14 +292,20 @@ a.article:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 110px;
+    margin-top: 0px;
 }
 
 .formulario{
     background-color: #90a0e9;
-    padding: 50px 50px 30px 50px;
-    border-radius: 10px;
+   padding: 30px 50px;
+    width: 100%;
 }
+
+/*.modal-content{
+    background-color: #90a0e9;
+    color: #fafafa;
+}*/
+
 
 .asterisco{
     color: red;
@@ -310,7 +317,6 @@ a.article:hover {
     align-items: center;
     text-align: center;
     justify-content: center;
-    flex-direction: column;
 }
 
 #botao_criar button{
@@ -319,10 +325,11 @@ a.article:hover {
     color: white;
     padding: 5px 15px;
     font-size: 15px;
+    margin: 0 6px;
 }
 
 #botao_criar a{
-    font-size: 12px;
+    font-size: 15px;
     color: white;
     margin-top: 10px;
 }
@@ -379,8 +386,8 @@ a.article:hover {
 }
 
 .botoes_deletar button{
-    margin-top: 50px;
-    padding: 20px 50px;
+    margin-top: 20px;
+    padding: 10px 50px;
     border-radius: 10px;
     border: none;
     color: white;

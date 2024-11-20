@@ -38,20 +38,7 @@
                 <li>
                     <a href="{{route('populars.index')}}">Populares</a>
                 </li>
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Relatórios</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#">Home 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 3</a>
-                        </li>
-                    </ul>
-                </li>
+    
             </ul>
 
 
@@ -92,7 +79,9 @@
 
 <div class='adicionar'>
     <h2>Artistas</h2>
-    <a href="{{route('artistas.create')}}"><button>Adicionar</button></a>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Adicionar
+</button>
 </div>
 
 <div class="table-wrapper">
@@ -119,6 +108,36 @@
         </table>
         </div>
     </div>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Criar</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+   
+      <div class="main">
+<div class="formulario">
+<form action="{{ route('artistas.store')}}" method="post">
+@csrf
+  <div data-mdb-input-init class="form-outline mb-4">
+    <label class="form-label" for="nome_artista" style="color:white;">Nome do Artista<span class="asterisco">*</span></label>
+    <input value='{{old("nome")}}' type="text" id="form1Example2" class="form-control" name="nome" placeholder="Nome" />
+  </div>
+
+</div>
+      </div>
+      <div class="modal-footer">
+      <div id="botao_criar">
+  <button data-mdb-ripple-init type="submit" id="criar" class="btn btn-block">Criar</button>
+  
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/js/script.js')}}"></script>
